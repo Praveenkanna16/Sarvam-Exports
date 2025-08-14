@@ -1,0 +1,117 @@
+/* src/pages/ContactPage.css */
+.contact-page.interactive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 4rem 2rem;
+  background-color: var(--bg-color);
+  overflow: hidden; /* Prevents scrollbars during animation */
+}
+
+.interactive-form-container {
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+}
+
+.form-step {
+  width: 100%;
+  opacity: 0;
+  transform: translateX(50px);
+  animation: slide-in 0.5s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.form-step label {
+  font-size: 2rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--primary-text-color);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.form-step input,
+.form-step textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--border-color);
+  background: transparent;
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
+  color: var(--primary-text-color);
+  font-family: var(--font-body);
+}
+
+.form-step input:focus,
+.form-step textarea:focus {
+  outline: none;
+  border-bottom-color: var(--accent-color);
+}
+
+.form-step textarea {
+  resize: none;
+  min-height: 100px;
+}
+
+.form-step button,
+.interest-options button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--accent-color);
+  background: var(--accent-color);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.form-step button:hover,
+.interest-options button:hover {
+  background: var(--accent-hover-color);
+  border-color: var(--accent-hover-color);
+}
+
+.interest-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.interest-options button {
+  background: transparent;
+  color: var(--accent-color);
+}
+
+.interest-options button:hover {
+  background: var(--accent-color);
+  color: white;
+}
+
+.thank-you-message {
+  text-align: center;
+  animation: slide-in 0.5s forwards;
+}
+
+.thank-you-message h3 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+}
+
+.thank-you-message p {
+  font-size: 1.2rem;
+}

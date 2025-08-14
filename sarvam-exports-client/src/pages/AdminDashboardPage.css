@@ -1,0 +1,45 @@
+/* src/pages/AdminDashboardPage.css */
+.admin-dashboard {
+  max-width: 1300px;
+  margin: 2rem auto;
+  padding: 0 50px;
+}
+
+.dashboard-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 1rem;
+}
+
+.inquiries-table-container {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow-x: auto; /* For responsiveness */
+}
+
+.inquiries-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.inquiries-table th,
+.inquiries-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.inquiries-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.inquiries-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.inquiries-table tbody tr:hover {
+  background-color: #f1f1f1;
+}

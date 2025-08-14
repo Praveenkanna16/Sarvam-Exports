@@ -1,0 +1,86 @@
+/* src/pages/ProductsPage.css */
+.products-page.immersive-carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh; /* Full viewport height minus navbar */
+  position: relative;
+  overflow: hidden;
+}
+
+.background-image-blur {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: calc(100% + 100px);
+  height: calc(100% + 100px);
+  background-size: cover;
+  background-position: center;
+  filter: blur(20px) brightness(0.8);
+  transform: scale(1.1);
+  transition: background-image 0.7s ease-in-out;
+  z-index: -1;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.carousel-arrow {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 2;
+  transition: background-color 0.3s;
+}
+.carousel-arrow:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+.left-arrow { margin: 0 2rem; }
+.right-arrow { margin: 0 2rem; }
+
+.carousel-track-container {
+  width: 350px; /* Width of one card */
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 10px;
+  margin-top: 2rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #fff;
+}

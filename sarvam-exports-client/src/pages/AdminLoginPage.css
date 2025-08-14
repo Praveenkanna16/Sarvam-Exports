@@ -1,0 +1,19 @@
+/* src/pages/AdminLoginPage.css */
+.admin-login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  min-height: 80vh;
+  background-color: #f4f4f4;
+}
+
+.admin-login-form {
+  padding: 2.5rem;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px S20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+/* Other form styles are similar to InquiryForm, so we can reuse them */

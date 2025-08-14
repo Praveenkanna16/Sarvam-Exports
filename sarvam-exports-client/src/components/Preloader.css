@@ -1,0 +1,111 @@
+/* src/components/Preloader.css */
+.preloader-stitch-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #EFEBE9; /* Raw, unbleached cotton background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.7s ease-in-out; /* Faster fade out */
+  transition-delay: 0.5s; 
+}
+
+.preloader-stitch-container.reveal {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.stitching-machine-animation {
+  width: 300px;
+  height: 50px;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.presser-foot {
+  width: 20px;
+  height: 15px;
+  background-color: #95a5a6; /* Darker silver */
+  position: absolute;
+  top: 0;
+  left: -8px; /* Centered on the needle */
+  border-radius: 2px;
+  animation: needle-move-across 1.8s cubic-bezier(0.76, 0, 0.24, 1) forwards; /* Faster */
+}
+
+.needle {
+  width: 4px;
+  height: 40px;
+  background-color: #bdc3c7;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  border-radius: 2px;
+  animation: 
+    needle-move-across 1.8s cubic-bezier(0.76, 0, 0.24, 1) forwards, /* Faster */
+    needle-bob 0.08s infinite alternate; /* Faster bobbing */
+}
+
+.stitch-path {
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.stitch-path::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background-image: linear-gradient(to right, #37474F 50%, transparent 50%);
+  background-size: 15px 2px;
+  animation: draw-stitch 1.8s linear forwards; /* Faster */
+}
+
+.preloader-logo-stitched {
+  color: #37474F;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  letter-spacing: 5px;
+  display: flex; /* Allows for letter spacing with spans */
+}
+
+.preloader-logo-stitched span {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: stitch-in 0.5s forwards;
+  animation-delay: 1.8s; /* Start after the main stitch is done */
+}
+
+
+/* --- KEYFRAME ANIMATIONS --- */
+@keyframes needle-move-across {
+  from { transform: translateX(0); }
+  to { transform: translateX(300px); }
+}
+
+@keyframes needle-bob {
+  from { top: -20px; }
+  to { top: 0px; }
+}
+
+@keyframes draw-stitch {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+@keyframes stitch-in {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
